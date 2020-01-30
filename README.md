@@ -14,7 +14,7 @@ The output file contains the DDL-Statements for creating the DB-schema (table an
 
 ---
 
-A tracefile for testing is in examle_tracefile folder.
+A tracefile for testing is in example_tracefile folder.
 
 ---
 
