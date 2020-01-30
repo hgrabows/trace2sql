@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="OracleTrace2SQL:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/OracleTrace2SQL_jar</output-path>
+    <root id="archive" name="OracleTrace2SQL.jar">
+      <element id="module-output" name="OracleTrace2SQL" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-cli-1.4/commons-cli-1.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

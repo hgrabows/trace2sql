@@ -1,0 +1,574 @@
+Trace file /u01/app/oracle/diag/rdbms/xe/XE/trace/XE_ora_6273.trc
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+ORACLE_HOME = /u01/app/oracle/product/11.2.0/xe
+System name:	Linux
+Node name:	ubuntu1904
+Release:	5.0.0-29-generic
+Version:	#31-Ubuntu SMP Thu Sep 12 13:05:32 UTC 2019
+Machine:	x86_64
+Instance name: XE
+Redo thread mounted by this instance: 1
+Oracle process number: 33
+Unix process pid: 6273, image: oracle@ubuntu1904
+
+
+*** 2019-12-14 21:20:12.128
+*** SESSION ID:(50.193) 2019-12-14 21:20:12.128
+*** CLIENT ID:() 2019-12-14 21:20:12.128
+*** SERVICE NAME:(XE) 2019-12-14 21:20:12.128
+*** MODULE NAME:(JDBC Thin Client) 2019-12-14 21:20:12.128
+*** ACTION NAME:() 2019-12-14 21:20:12.128
+ 
+XCTEND rlbk=0, rd_only=1, tim=1576354812127825
+WAIT #140289808044144: nam='SQL*Net message to client' ela= 6 driver id=1413697536 #bytes=1 p3=0 obj#=-1 tim=1576354812128150
+WAIT #140289808044144: nam='SQL*Net message from client' ela= 221 driver id=1413697536 #bytes=1 p3=0 obj#=-1 tim=1576354812128394
+CLOSE #140289808044144:c=5,e=5,dep=0,type=1,tim=1576354812128430
+=====================
+PARSING IN CURSOR #140289808019104 len=482 dep=1 uid=50 oct=3 lid=50 tim=1576354812129468 hv=4185788177 ad='9f90bc88' sqlid='f'
+SELECT /* OPT_DYN_SAMP */ /*+ ALL_ROWS IGNORE_WHERE_CLAUSE NO_PARALLEL(SAMPLESUB) opt_param('parallel_execution_enabled', 'false') NO_PARALLEL_INDEX(SAMPLESUB) NO_SQL_TUNE */ NVL(SUM(C1),:"SYS_B_0"), NVL(SUM(C2),:"SYS_B_1"), COUNT(DISTINCT C3), NVL(SUM(CASE WHEN C3 IS NULL THEN :"SYS_B_2" ELSE :"SYS_B_3" END),:"SYS_B_4") FROM (SELECT /*+ NO_PARALLEL("G") FULL("G") NO_PARALLEL_INDEX("G") */ :"SYS_B_5" AS C1, :"SYS_B_6" AS C2, "G"."URL" AS C3 FROM "CHRIS"."GADGETS" "G") SAMPLESUB
+END OF STMT
+PARSE #140289808019104:c=74,e=74,p=0,cr=0,cu=0,mis=0,r=0,dep=1,og=1,plh=3991267174,tim=1576354812129467
+BINDS #140289808019104:
+ Bind#0
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f8d2c88  bln=22  avl=01  flg=09
+  value=0
+ Bind#1
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9faef080  bln=22  avl=01  flg=09
+  value=0
+ Bind#2
+  oacdty=02 mxl=22(02) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9909b200  bln=22  avl=02  flg=09
+  value=1
+ Bind#3
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=990997d0  bln=22  avl=01  flg=09
+  value=0
+ Bind#4
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=99219fd8  bln=22  avl=01  flg=09
+  value=0
+ Bind#5
+  oacdty=02 mxl=22(02) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0500 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=990c7bf8  bln=22  avl=02  flg=09
+  value=1
+ Bind#6
+  oacdty=02 mxl=22(02) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0500 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=983a8e98  bln=22  avl=02  flg=09
+  value=1
+EXEC #140289808019104:c=374,e=373,p=0,cr=0,cu=0,mis=0,r=0,dep=1,og=1,plh=3991267174,tim=1576354812130079
+WAIT #140289808019104: nam='asynch descriptor resize' ela= 6 outstanding #aio=0 current aio limit=128 new aio limit=129 obj#=-1 tim=1576354812130173
+FETCH #140289808019104:c=1079,e=39262,p=0,cr=5,cu=0,mis=0,r=1,dep=1,og=1,plh=3991267174,tim=1576354812169369
+STAT #140289808019104 id=1 cnt=1 pid=0 pos=1 obj=0 op='SORT AGGREGATE (cr=5 pr=0 pw=0 time=39357 us)'
+STAT #140289808019104 id=2 cnt=91 pid=1 pos=1 obj=0 op='VIEW  VW_DAG_0 (cr=5 pr=0 pw=0 time=39340 us cost=4 size=129888 card=246)'
+STAT #140289808019104 id=3 cnt=91 pid=2 pos=1 obj=0 op='HASH GROUP BY (cr=5 pr=0 pw=0 time=39248 us cost=4 size=123492 card=246)'
+STAT #140289808019104 id=4 cnt=91 pid=3 pos=1 obj=21455 op='TABLE ACCESS FULL GADGETS (cr=5 pr=0 pw=0 time=217 us cost=3 size=123492 card=246)'
+CLOSE #140289808019104:c=7,e=8,dep=1,type=1,tim=1576354812169561
+=====================
+PARSING IN CURSOR #140289808018240 len=562 dep=1 uid=50 oct=3 lid=50 tim=1576354812170157 hv=1167889561 ad='9913e0a8' sqlid='b41tav92tt54t'
+SELECT /* OPT_DYN_SAMP */ /*+ ALL_ROWS IGNORE_WHERE_CLAUSE NO_PARALLEL(SAMPLESUB) opt_param('parallel_execution_enabled', 'false') NO_PARALLEL_INDEX(SAMPLESUB) NO_SQL_TUNE */ NVL(SUM(C1),:"SYS_B_0"), NVL(SUM(C2),:"SYS_B_1"), COUNT(DISTINCT C3), NVL(SUM(CASE WHEN C3 IS NULL THEN :"SYS_B_2" ELSE :"SYS_B_3" END),:"SYS_B_4") FROM (SELECT /*+ IGNORE_WHERE_CLAUSE NO_PARALLEL("B") FULL("B") NO_PARALLEL_INDEX("B") */ :"SYS_B_5" AS C1, CASE WHEN "B"."EMAIL"=:"SYS_B_6" THEN :"SYS_B_7" ELSE :"SYS_B_8" END AS C2, "B"."URL" AS C3 FROM "CHRIS"."BEWERTUNG" "B") SAMPLESUB
+END OF STMT
+PARSE #140289808018240:c=441,e=442,p=0,cr=0,cu=0,mis=1,r=0,dep=1,og=1,plh=0,tim=1576354812170156
+BINDS #140289808018240:
+ Bind#0
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=981f4070  bln=22  avl=01  flg=09
+  value=0
+ Bind#1
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f941b38  bln=22  avl=01  flg=09
+  value=0
+ Bind#2
+  oacdty=02 mxl=22(02) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f93ff78  bln=22  avl=02  flg=09
+  value=1
+ Bind#3
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f93e340  bln=22  avl=01  flg=09
+  value=0
+ Bind#4
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f93a808  bln=22  avl=01  flg=09
+  value=0
+ Bind#5
+  oacdty=02 mxl=22(02) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f933468  bln=22  avl=02  flg=09
+  value=1
+ Bind#6
+  oacdty=01 mxl=32(05) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0500 frm=01 csi=873 siz=32 off=0
+  kxsbbbfp=9f931838  bln=32  avl=05  flg=09
+  value="12345"
+ Bind#7
+  oacdty=02 mxl=22(02) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f9303b0  bln=22  avl=02  flg=09
+  value=1
+ Bind#8
+  oacdty=02 mxl=22(01) mxlc=00 mal=00 scl=00 pre=00
+  oacflg=10 fl2=0100 frm=00 csi=00 siz=24 off=0
+  kxsbbbfp=9f92eee8  bln=22  avl=01  flg=09
+  value=0
+EXEC #140289808018240:c=1348,e=1346,p=0,cr=0,cu=0,mis=1,r=0,dep=1,og=1,plh=3605559385,tim=1576354812171565
+WAIT #140289808018240: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=258 obj#=-1 tim=1576354812171646
+WAIT #140289808018240: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=258 new aio limit=129 obj#=-1 tim=1576354812229603
+FETCH #140289808018240:c=721,e=94343,p=0,cr=3,cu=0,mis=0,r=1,dep=1,og=1,plh=3605559385,tim=1576354812265929
+STAT #140289808018240 id=1 cnt=1 pid=0 pos=1 obj=0 op='SORT AGGREGATE (cr=3 pr=0 pw=0 time=94358 us)'
+STAT #140289808018240 id=2 cnt=37 pid=1 pos=1 obj=0 op='VIEW  VW_DAG_0 (cr=3 pr=0 pw=0 time=58004 us cost=3 size=44362 card=82)'
+STAT #140289808018240 id=3 cnt=37 pid=2 pos=1 obj=0 op='HASH GROUP BY (cr=3 pr=0 pw=0 time=58002 us cost=3 size=45428 card=82)'
+STAT #140289808018240 id=4 cnt=39 pid=3 pos=1 obj=21458 op='TABLE ACCESS FULL BEWERTUNG (cr=3 pr=0 pw=0 time=110 us cost=2 size=45428 card=82)'
+CLOSE #140289808018240:c=12,e=12,dep=1,type=0,tim=1576354812266134
+=====================
+PARSING IN CURSOR #140289808019968 len=158 dep=0 uid=50 oct=3 lid=50 tim=1576354812266780 hv=1156813489 ad='9803cd18' sqlid='28dzua12g74pj'
+select g.url, g.email, g.beschreibung, g.cover, b.kommentar, b.gefallen
+from bewertung b right outer join gadgets g
+ON (b.url = g.url) AND (b.email = '12345')
+END OF STMT
+PARSE #140289808019968:c=6525,e=138336,p=0,cr=11,cu=0,mis=1,r=0,dep=0,og=1,plh=1514576463,tim=1576354812266779
+EXEC #140289808019968:c=24,e=24,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=1,plh=1514576463,tim=1576354812266868
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 6 driver id=1413697536 #bytes=1 p3=0 obj#=-1 tim=1576354812266902
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 1082 driver id=1413697536 #bytes=1 p3=0 obj#=-1 tim=1576354812268124
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 6 driver id=1413697536 #bytes=1 p3=0 obj#=-1 tim=1576354812268341
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=-1 tim=1576354812268522
+WAIT #140289808019968: nam='direct path read' ela= 31 file number=1 first dba=45299 block cnt=1 obj#=21456 tim=1576354812313779
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812313845
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812357907
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=46418 block cnt=1 obj#=21456 tim=1576354812389820
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812389899
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 63 driver id=1413697536 #bytes=8329 p3=0 obj#=21456 tim=1576354812442285
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812442399
+
+*** 2019-12-14 21:20:12.485
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=46425 block cnt=1 obj#=21456 tim=1576354812485812
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812485896
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812529702
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=46432 block cnt=1 obj#=21456 tim=1576354812586574
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812586644
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 85 driver id=1413697536 #bytes=8074 p3=0 obj#=21456 tim=1576354812635729
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 4 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812635859
+WAIT #140289808019968: nam='direct path read' ela= 20 file number=1 first dba=46435 block cnt=1 obj#=21456 tim=1576354812689980
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812690092
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812733760
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=46449 block cnt=1 obj#=21456 tim=1576354812773945
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812774015
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 71 driver id=1413697536 #bytes=8223 p3=0 obj#=21456 tim=1576354812816082
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812816208
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=46459 block cnt=1 obj#=21456 tim=1576354812870025
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812870104
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812921724
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45312 block cnt=1 obj#=21456 tim=1576354812950012
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354812950079
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 84 driver id=1413697536 #bytes=8102 p3=0 obj#=21456 tim=1576354812998388
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 6 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354812998636
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45318 block cnt=1 obj#=21456 tim=1576354813034816
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813034882
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813073875
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45323 block cnt=1 obj#=21456 tim=1576354813125888
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813125950
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 73 driver id=1413697536 #bytes=8201 p3=0 obj#=21456 tim=1576354813169992
+FETCH #140289808019968:c=5776,e=901805,p=10,cr=17,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354813170059
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 1713 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354813171877
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354813171978
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813172034
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45326 block cnt=1 obj#=21456 tim=1576354813206238
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813206345
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813246190
+WAIT #140289808019968: nam='direct path read' ela= 29 file number=1 first dba=45334 block cnt=1 obj#=21456 tim=1576354813289985
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813290076
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 63 driver id=1413697536 #bytes=8183 p3=0 obj#=21456 tim=1576354813325743
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813325857
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45349 block cnt=1 obj#=21456 tim=1576354813365728
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813365790
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813421862
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45357 block cnt=1 obj#=21456 tim=1576354813453764
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813453826
+
+*** 2019-12-14 21:20:13.521
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 96 driver id=1413697536 #bytes=8213 p3=0 obj#=21456 tim=1576354813521871
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813522110
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45365 block cnt=1 obj#=21456 tim=1576354813553733
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813553794
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813605698
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45370 block cnt=1 obj#=21456 tim=1576354813637669
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813637755
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 68 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354813674156
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813674285
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45571 block cnt=1 obj#=21456 tim=1576354813713981
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813714052
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 7 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813753950
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45574 block cnt=1 obj#=21456 tim=1576354813793849
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813793935
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 73 driver id=1413697536 #bytes=8129 p3=0 obj#=21456 tim=1576354813829870
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813829989
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45577 block cnt=1 obj#=21456 tim=1576354813870024
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813870087
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813901833
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45584 block cnt=1 obj#=21456 tim=1576354813933880
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354813933946
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 74 driver id=1413697536 #bytes=8232 p3=0 obj#=21456 tim=1576354813969993
+FETCH #140289808019968:c=5593,e=798120,p=10,cr=12,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354813970052
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 795 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354813970912
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354813971036
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354813971096
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45591 block cnt=1 obj#=21456 tim=1576354814002808
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814002869
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814037936
+WAIT #140289808019968: nam='direct path read' ela= 30 file number=1 first dba=45598 block cnt=1 obj#=21456 tim=1576354814085900
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814085996
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 88 driver id=1413697536 #bytes=8355 p3=0 obj#=21456 tim=1576354814121965
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 4 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814122095
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45606 block cnt=1 obj#=21456 tim=1576354814165731
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814165794
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814197711
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45614 block cnt=1 obj#=21456 tim=1576354814237973
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814238038
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 89 driver id=1413697536 #bytes=8117 p3=0 obj#=21456 tim=1576354814277979
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814278126
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45621 block cnt=1 obj#=21456 tim=1576354814310171
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814310239
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814342348
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45626 block cnt=1 obj#=21456 tim=1576354814381965
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814382042
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 107 driver id=1413697536 #bytes=7996 p3=0 obj#=21456 tim=1576354814426090
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814426206
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45630 block cnt=1 obj#=21456 tim=1576354814461956
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814462026
+
+*** 2019-12-14 21:20:14.498
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814498025
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45637 block cnt=1 obj#=21456 tim=1576354814545878
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814545951
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 79 driver id=1413697536 #bytes=8300 p3=0 obj#=21456 tim=1576354814585669
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814585891
+WAIT #140289808019968: nam='direct path read' ela= 20 file number=1 first dba=45641 block cnt=1 obj#=21456 tim=1576354814621652
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814621712
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 6 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814662129
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45650 block cnt=1 obj#=21456 tim=1576354814694244
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814694324
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 66 driver id=1413697536 #bytes=8081 p3=0 obj#=21456 tim=1576354814725755
+FETCH #140289808019968:c=6215,e=754833,p=10,cr=13,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354814725811
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 574 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354814726495
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354814726578
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814726633
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=45657 block cnt=1 obj#=21456 tim=1576354814765789
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814765861
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814798092
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45665 block cnt=1 obj#=21456 tim=1576354814830201
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814830267
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 82 driver id=1413697536 #bytes=8264 p3=0 obj#=21456 tim=1576354814862637
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814862756
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45671 block cnt=1 obj#=21456 tim=1576354814897770
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814897846
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354814934246
+WAIT #140289808019968: nam='direct path read' ela= 28 file number=1 first dba=45680 block cnt=1 obj#=21456 tim=1576354814969691
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354814969774
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 43 driver id=1413697536 #bytes=8057 p3=0 obj#=21456 tim=1576354815001696
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815001816
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45686 block cnt=1 obj#=21456 tim=1576354815042055
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815042263
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815085897
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45690 block cnt=1 obj#=21456 tim=1576354815117703
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815117763
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 91 driver id=1413697536 #bytes=8246 p3=0 obj#=21456 tim=1576354815149759
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 83 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815149972
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45695 block cnt=1 obj#=21456 tim=1576354815182053
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815182126
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815223513
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=45704 block cnt=1 obj#=21456 tim=1576354815262407
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815262480
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 89 driver id=1413697536 #bytes=8038 p3=0 obj#=21456 tim=1576354815293992
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 6 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815294150
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=45712 block cnt=1 obj#=21456 tim=1576354815330149
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815330234
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815369718
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45718 block cnt=1 obj#=21456 tim=1576354815401872
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815401941
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 88 driver id=1413697536 #bytes=8137 p3=0 obj#=21456 tim=1576354815438068
+FETCH #140289808019968:c=5812,e=711601,p=10,cr=12,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354815438141
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 652 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354815438872
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354815438969
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815439024
+
+*** 2019-12-14 21:20:15.481
+WAIT #140289808019968: nam='direct path read' ela= 27 file number=1 first dba=45727 block cnt=1 obj#=21456 tim=1576354815481847
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815481944
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815525990
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45734 block cnt=1 obj#=21456 tim=1576354815565749
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815565812
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 63 driver id=1413697536 #bytes=8231 p3=0 obj#=21456 tim=1576354815601724
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815601848
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45740 block cnt=1 obj#=21456 tim=1576354815648209
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815648276
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815681869
+WAIT #140289808019968: nam='direct path read' ela= 27 file number=1 first dba=45747 block cnt=1 obj#=21456 tim=1576354815722127
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815722208
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 89 driver id=1413697536 #bytes=8136 p3=0 obj#=21456 tim=1576354815761952
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 4 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815762091
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45754 block cnt=1 obj#=21456 tim=1576354815810005
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815810077
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815842258
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45759 block cnt=1 obj#=21456 tim=1576354815902019
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815902131
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 99 driver id=1413697536 #bytes=8194 p3=0 obj#=21456 tim=1576354815949903
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354815950066
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45766 block cnt=1 obj#=21456 tim=1576354815982209
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354815982288
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816029881
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45778 block cnt=1 obj#=21456 tim=1576354816069877
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816069942
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 66 driver id=1413697536 #bytes=8194 p3=0 obj#=21456 tim=1576354816101708
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816101830
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45783 block cnt=1 obj#=21456 tim=1576354816141745
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816141808
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816182000
+WAIT #140289808019968: nam='direct path read' ela= 27 file number=1 first dba=45790 block cnt=1 obj#=21456 tim=1576354816221995
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816222065
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 66 driver id=1413697536 #bytes=8099 p3=0 obj#=21456 tim=1576354816254112
+FETCH #140289808019968:c=5479,e=815245,p=10,cr=12,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354816254169
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 790 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354816255029
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354816255131
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816255190
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=45798 block cnt=1 obj#=21456 tim=1576354816285771
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816285854
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816317779
+WAIT #140289808019968: nam='direct path read' ela= 28 file number=1 first dba=45805 block cnt=1 obj#=21456 tim=1576354816366311
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816366471
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 89 driver id=1413697536 #bytes=8266 p3=0 obj#=21456 tim=1576354816398275
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 6 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816398429
+WAIT #140289808019968: nam='direct path read' ela= 27 file number=1 first dba=45812 block cnt=1 obj#=21456 tim=1576354816445655
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816445730
+
+*** 2019-12-14 21:20:16.478
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816478088
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45824 block cnt=1 obj#=21456 tim=1576354816518168
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816518236
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 90 driver id=1413697536 #bytes=8175 p3=0 obj#=21456 tim=1576354816550037
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816550201
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=45839 block cnt=1 obj#=21456 tim=1576354816590253
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816590377
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816641814
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45845 block cnt=1 obj#=21456 tim=1576354816682163
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816682236
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 91 driver id=1413697536 #bytes=8172 p3=0 obj#=21456 tim=1576354816713885
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816714029
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45850 block cnt=1 obj#=21456 tim=1576354816753917
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816754045
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816786490
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45863 block cnt=1 obj#=21456 tim=1576354816833751
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816833812
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 104 driver id=1413697536 #bytes=8180 p3=0 obj#=21456 tim=1576354816866277
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816866422
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45866 block cnt=1 obj#=21456 tim=1576354816918108
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816918180
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 17 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354816958027
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45876 block cnt=1 obj#=21456 tim=1576354816989637
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354816989703
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 73 driver id=1413697536 #bytes=8160 p3=0 obj#=21456 tim=1576354817033790
+FETCH #140289808019968:c=6181,e=778769,p=10,cr=13,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354817033851
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 639 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354817034555
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354817034645
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817034699
+WAIT #140289808019968: nam='direct path read' ela= 20 file number=1 first dba=45891 block cnt=1 obj#=21456 tim=1576354817065877
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817065941
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817110185
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45893 block cnt=1 obj#=21456 tim=1576354817149955
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817150022
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 97 driver id=1413697536 #bytes=8262 p3=0 obj#=21456 tim=1576354817181777
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817181969
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45902 block cnt=1 obj#=21456 tim=1576354817220056
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817220117
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 7 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817253875
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45908 block cnt=1 obj#=21456 tim=1576354817290154
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817290231
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 82 driver id=1413697536 #bytes=8039 p3=0 obj#=21456 tim=1576354817329974
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 7 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817330196
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45916 block cnt=1 obj#=21456 tim=1576354817370258
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817370323
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817403284
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=45923 block cnt=1 obj#=21456 tim=1576354817445820
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817445886
+
+*** 2019-12-14 21:20:17.482
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 113 driver id=1413697536 #bytes=8376 p3=0 obj#=21456 tim=1576354817482320
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 4 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817482509
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45927 block cnt=1 obj#=21456 tim=1576354817513891
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817513952
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817546412
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45933 block cnt=1 obj#=21456 tim=1576354817582413
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817582482
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 89 driver id=1413697536 #bytes=8084 p3=0 obj#=21456 tim=1576354817621995
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 4 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817622124
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45941 block cnt=1 obj#=21456 tim=1576354817650032
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817650094
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817682060
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45948 block cnt=1 obj#=21456 tim=1576354817733753
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817733821
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 102 driver id=1413697536 #bytes=8064 p3=0 obj#=21456 tim=1576354817766123
+FETCH #140289808019968:c=5908,e=731607,p=10,cr=12,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354817766208
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 879 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354817767182
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354817767314
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817767384
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=45949 block cnt=1 obj#=21456 tim=1576354817813820
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817813892
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817850221
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=45953 block cnt=1 obj#=21456 tim=1576354817881765
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817881835
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 88 driver id=1413697536 #bytes=8248 p3=0 obj#=21456 tim=1576354817925927
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817926070
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45960 block cnt=1 obj#=21456 tim=1576354817965810
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354817965877
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354817997805
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=45967 block cnt=1 obj#=21456 tim=1576354818046054
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818046121
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 80 driver id=1413697536 #bytes=8143 p3=0 obj#=21456 tim=1576354818089806
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818089930
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=45976 block cnt=1 obj#=21456 tim=1576354818126201
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818126273
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818173724
+WAIT #140289808019968: nam='direct path read' ela= 19 file number=1 first dba=45981 block cnt=1 obj#=21456 tim=1576354818213654
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818213732
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 80 driver id=1413697536 #bytes=8079 p3=0 obj#=21456 tim=1576354818245998
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818246116
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45991 block cnt=1 obj#=21456 tim=1576354818273961
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818274034
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818326081
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=45996 block cnt=1 obj#=21456 tim=1576354818358139
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818358201
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 85 driver id=1413697536 #bytes=8351 p3=0 obj#=21456 tim=1576354818410122
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818410257
+WAIT #140289808019968: nam='direct path read' ela= 22 file number=1 first dba=46000 block cnt=1 obj#=21456 tim=1576354818442117
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818442185
+
+*** 2019-12-14 21:20:18.485
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 7 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818485789
+WAIT #140289808019968: nam='direct path read' ela= 59 file number=1 first dba=46011 block cnt=1 obj#=21456 tim=1576354818522058
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818522122
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 72 driver id=1413697536 #bytes=8078 p3=0 obj#=21456 tim=1576354818553854
+FETCH #140289808019968:c=5550,e=786653,p=10,cr=12,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354818553911
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 503 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354818554478
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354818554589
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818554646
+WAIT #140289808019968: nam='direct path read' ela= 21 file number=1 first dba=46020 block cnt=1 obj#=21456 tim=1576354818595906
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818595976
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 11 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818636969
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=46025 block cnt=1 obj#=21456 tim=1576354818666107
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818666180
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 86 driver id=1413697536 #bytes=8242 p3=0 obj#=21456 tim=1576354818706315
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 5 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818706457
+WAIT #140289808019968: nam='direct path read' ela= 37 file number=1 first dba=46029 block cnt=1 obj#=21456 tim=1576354818739070
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818739149
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818769763
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=46032 block cnt=1 obj#=21456 tim=1576354818801747
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818801822
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 96 driver id=1413697536 #bytes=8154 p3=0 obj#=21456 tim=1576354818838042
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818838147
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=46042 block cnt=1 obj#=21456 tim=1576354818870341
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818870408
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 8 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818901853
+WAIT #140289808019968: nam='direct path read' ela= 26 file number=1 first dba=46051 block cnt=1 obj#=21456 tim=1576354818946075
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354818946147
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 81 driver id=1413697536 #bytes=8101 p3=0 obj#=21456 tim=1576354818981762
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354818981950
+WAIT #140289808019968: nam='direct path read' ela= 24 file number=1 first dba=46055 block cnt=1 obj#=21456 tim=1576354819021862
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354819021936
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 9 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354819057845
+WAIT #140289808019968: nam='direct path read' ela= 25 file number=1 first dba=46065 block cnt=1 obj#=21456 tim=1576354819089841
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354819089933
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 160 driver id=1413697536 #bytes=8328 p3=0 obj#=21456 tim=1576354819122050
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 6 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354819122197
+WAIT #140289808019968: nam='direct path read' ela= 27 file number=1 first dba=46079 block cnt=1 obj#=21456 tim=1576354819162017
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354819162100
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 10 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354819210129
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=46082 block cnt=1 obj#=21456 tim=1576354819249960
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354819250023
+WAIT #140289808019968: nam='SQL*Net more data to client' ela= 84 driver id=1413697536 #bytes=8064 p3=0 obj#=21456 tim=1576354819293912
+FETCH #140289808019968:c=6028,e=739452,p=10,cr=12,cu=0,mis=0,r=10,dep=0,og=1,plh=1514576463,tim=1576354819293987
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 755 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819294819
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819294937
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 2 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354819295004
+WAIT #140289808019968: nam='direct path read' ela= 23 file number=1 first dba=46098 block cnt=1 obj#=21456 tim=1576354819350467
+WAIT #140289808019968: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354819350529
+FETCH #140289808019968:c=488,e=90912,p=1,cr=3,cu=0,mis=0,r=1,dep=0,og=1,plh=1514576463,tim=1576354819385791
+STAT #140289808019968 id=1 cnt=91 pid=0 pos=1 obj=0 op='NESTED LOOPS OUTER (cr=27 pr=0 pw=0 time=3131 us cost=3 size=382564 card=91)'
+STAT #140289808019968 id=2 cnt=91 pid=1 pos=1 obj=21455 op='TABLE ACCESS FULL GADGETS (cr=14 pr=0 pw=0 time=581 us cost=3 size=285285 card=91)'
+STAT #140289808019968 id=3 cnt=0 pid=1 pos=2 obj=21458 op='TABLE ACCESS BY INDEX ROWID BEWERTUNG (cr=13 pr=0 pw=0 time=1066 us cost=0 size=1069 card=1)'
+STAT #140289808019968 id=4 cnt=0 pid=3 pos=1 obj=21461 op='INDEX UNIQUE SCAN PK_TAGS (cr=13 pr=0 pw=0 time=834 us cost=0 size=0 card=1)'
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 848 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819386834
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819386902
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 1375 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819388302
+WAIT #0: nam='asynch descriptor resize' ela= 3 outstanding #aio=0 current aio limit=129 new aio limit=133 obj#=21456 tim=1576354819388385
+WAIT #0: nam='direct path read' ela= 19 file number=1 first dba=45299 block cnt=1 obj#=21456 tim=1576354819425689
+WAIT #0: nam='direct path read' ela= 11 file number=1 first dba=45300 block cnt=4 obj#=21456 tim=1576354819425748
+WAIT #0: nam='direct path read' ela= 11 file number=1 first dba=46408 block cnt=4 obj#=21456 tim=1576354819425804
+WAIT #0: nam='direct path read' ela= 10 file number=1 first dba=46412 block cnt=4 obj#=21456 tim=1576354819425830
+WAIT #0: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819425851
+WAIT #0: nam='SQL*Net more data to client' ela= 55 driver id=1413697536 #bytes=8165 p3=0 obj#=21456 tim=1576354819425923
+WAIT #0: nam='direct path read' ela= 7 file number=1 first dba=46416 block cnt=2 obj#=21456 tim=1576354819425948
+WAIT #0: nam='SQL*Net more data to client' ela= 14 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819425977
+WAIT #0: nam='SQL*Net more data to client' ela= 12 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426004
+WAIT #0: nam='SQL*Net more data to client' ela= 11 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426029
+WAIT #0: nam='SQL*Net more data to client' ela= 13 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426056
+WAIT #0: nam='SQL*Net more data to client' ela= 15 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426087
+WAIT #0: nam='SQL*Net more data to client' ela= 11 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426112
+WAIT #0: nam='SQL*Net more data to client' ela= 11 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426137
+WAIT #0: nam='SQL*Net more data to client' ela= 11 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426161
+WAIT #0: nam='SQL*Net more data to client' ela= 10 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426186
+WAIT #0: nam='SQL*Net more data to client' ela= 9 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426209
+WAIT #0: nam='SQL*Net more data to client' ela= 9 driver id=1413697536 #bytes=7936 p3=0 obj#=21456 tim=1576354819426231
+WAIT #0: nam='SQL*Net more data to client' ela= 16 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426308
+WAIT #0: nam='SQL*Net more data to client' ela= 11 driver id=1413697536 #bytes=8164 p3=0 obj#=21456 tim=1576354819426340
+WAIT #0: nam='asynch descriptor resize' ela= 1 outstanding #aio=0 current aio limit=133 new aio limit=129 obj#=21456 tim=1576354819426360
+LOBREAD: c=968,e=69349,p=15,cr=17,cu=0,tim=1576354819457694
+
+*** 2019-12-14 21:20:19.490
+WAIT #0: nam='SQL*Net message from client' ela= 32567 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819490349
+CLOSE #140289808019968:c=21,e=21,dep=0,type=0,tim=1576354819490468
+WAIT #0: nam='SQL*Net message to client' ela= 5 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819490510
+WAIT #0: nam='SQL*Net message from client' ela= 1967 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819492491
+=====================
+PARSING IN CURSOR #140289808019968 len=213 dep=0 uid=50 oct=3 lid=50 tim=1576354819492616 hv=2469621766 ad='982713d8' sqlid='7augy8y9m6w06'
+select kommentar
+from bewertung
+where url = 'http://static1.squarespace.com/static/582adc9ae4fcb54bebfae91f/582b45f1440243e4d6cbf859/5a02cadd71c10ba51be0a974/1510826627308/BYKE+Frankfurt+Launch+5.jpg?format=1500w'
+END OF STMT
+PARSE #140289808019968:c=62,e=62,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=1,plh=744459463,tim=1576354819492614
+EXEC #140289808019968:c=26,e=27,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=1,plh=744459463,tim=1576354819492714
+WAIT #140289808019968: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819492741
+FETCH #140289808019968:c=58,e=58,p=0,cr=3,cu=0,mis=0,r=2,dep=0,og=1,plh=744459463,tim=1576354819492819
+STAT #140289808019968 id=1 cnt=2 pid=0 pos=1 obj=21458 op='TABLE ACCESS FULL BEWERTUNG (cr=3 pr=0 pw=0 time=48 us cost=2 size=2008 card=2)'
+WAIT #140289808019968: nam='SQL*Net message from client' ela= 1343 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819494226
+CLOSE #140289808019968:c=10,e=10,dep=0,type=1,tim=1576354819494286
+WAIT #0: nam='SQL*Net message to client' ela= 3 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819494321
+WAIT #0: nam='SQL*Net message from client' ela= 508 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819494843
+=====================
+PARSING IN CURSOR #140289808017936 len=217 dep=0 uid=50 oct=3 lid=50 tim=1576354819494930 hv=3085517698 ad='981dc1e0' sqlid='7stjzq2vykhw2'
+select avg(gefallen)
+from bewertung
+where url ='http://static1.squarespace.com/static/582adc9ae4fcb54bebfae91f/582b45f1440243e4d6cbf859/5a02cadd71c10ba51be0a974/1510826627308/BYKE+Frankfurt+Launch+5.jpg?format=1500w'
+END OF STMT
+PARSE #140289808017936:c=51,e=50,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=1,plh=3299806004,tim=1576354819494928
+EXEC #140289808017936:c=24,e=25,p=0,cr=0,cu=0,mis=0,r=0,dep=0,og=1,plh=3299806004,tim=1576354819495014
+WAIT #140289808017936: nam='SQL*Net message to client' ela= 2 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354819495040
+FETCH #140289808017936:c=103,e=101,p=0,cr=3,cu=0,mis=0,r=1,dep=0,og=1,plh=3299806004,tim=1576354819495160
+STAT #140289808017936 id=1 cnt=1 pid=0 pos=1 obj=0 op='SORT AGGREGATE (cr=3 pr=0 pw=0 time=98 us)'
+STAT #140289808017936 id=2 cnt=2 pid=1 pos=1 obj=21458 op='TABLE ACCESS FULL BEWERTUNG (cr=3 pr=0 pw=0 time=30 us cost=2 size=1030 card=2)'
+
+*** 2019-12-14 21:20:20.726
+WAIT #140289808017936: nam='SQL*Net message from client' ela= 1230727 driver id=1413697536 #bytes=1 p3=0 obj#=21456 tim=1576354820726072
+CLOSE #140289808011312:c=16,e=15,dep=0,type=0,tim=1576354820726300
+CLOSE #140289808130400:c=11,e=12,dep=0,type=0,tim=1576354820726413
+CLOSE #140289808017936:c=11,e=10,dep=0,type=0,tim=1576354820726440
