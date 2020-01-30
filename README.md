@@ -1,8 +1,9 @@
 ## trace2sql
-### A tool for transfroming the oracle tracefile into a sql table
+### A tool for transfroming the oracle tracefile into a sql table  
 
-The executable jar-file is in jarfile folder.  
+The executable jar-file is in jarfile folder. 
 Requires Java Runtime 1.8.0_191.  
+
 ---
 
 Usage:  
